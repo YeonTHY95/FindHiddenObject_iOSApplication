@@ -1,4 +1,4 @@
-# Find Hidden Objects iOS Development
+# Find Hidden Objects iOS Application
 
 <p align="center">This is the demonstration of <b>Find Hidden Objects iOS Application</b></p>
 <p align="center">Video Demonstration : https://youtu.be/15aRJEx4qP4</p>
