@@ -1,7 +1,7 @@
 # Find Hidden Objects iOS Development
 
 <p align="center">This is the demonstration of <b>Find Hidden Objects iOS Application</b></p>
-<p align="center">Video Demonstration : </p>
+<p align="center">Video Demonstration : https://youtu.be/15aRJEx4qP4</p>
 
 ## Table of Contents
 
@@ -14,6 +14,8 @@
 ## Background
 
 Built with React, TypeScript, ExpressJS, MongoDB and so on, Find Hidden Objects is a web-based mini game that lets user to find the hidden object by simply clicking on the image. 
+
+Images source : FreePik, Pinterest, LottieFiles
 
 ## Tech Stack & Features
 ### Frontend
@@ -61,9 +63,9 @@ Make sure you have the following installed on your machine:
 - Docker
 
 Cloning the Repository
- > git clone 
+ > git clone https://github.com/YeonTHY95/FindHiddenObject_iOSWithBackend.git
  > 
- > cd 
+ > cd FindHiddenObject_iOSWithBackend
 
 Start the Docker service for backend services
 
@@ -72,4 +74,4 @@ Running the project
  >
  > docker compose up --build
 
-Open XCode and click Run to view the project.
+Open XCode to open Xcodeproj file under folder FindHiddenObject_iOS and click Run to view the project.
