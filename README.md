@@ -74,4 +74,4 @@ Running the project
  >
  > docker compose up --build
 
-Open XCode to open Xcodeproj file under folder FindHiddenObject_iOS and click Run to view the project.
+Unzip FindHiddenObject_iOS and then open XCode to open Xcodeproj file under folder FindHiddenObject_iOS and click Run to view the project.
