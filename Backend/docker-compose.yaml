@@ -1,0 +1,72 @@
+services:
+  backend_mongo:
+    container_name: BE_withMongo
+    build: 
+      context: BE_withMongo
+    depends_on:
+      database_mongoDB:
+        condition: service_healthy 
+    ports:
+      - "6688:6688"
+
+  backup_backend:
+      build: 
+        context: BE_withMongo
+      depends_on:
+        database_mongoDB:
+          condition: service_healthy 
+      deploy:
+        replicas: 3
+        
+  backend:
+    container_name: backend
+    build: 
+      context: backend
+    depends_on:
+      database_docker:
+        condition: service_healthy
+    ports:
+      - "6677:6677"
+ 
+  database_docker:
+    image: postgres:17
+    ports:
+      - "5431:5432"
+    restart: always
+    #expose:
+    #  - "5432"
+    environment:
+      PGUSER : postgres 
+      POSTGRES_PASSWORD: psql
+      POSTGRES_DB: club_member
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d club_member"]
+      interval: 10s
+      timeout: 30s
+      retries: 5
+    #command: pg_isready -U postgres -d club_member  && psql club_member < /tmp/testp/
+    volumes:
+      - ./dbinit/postgreSQL/:/docker-entrypoint-initdb.d/
+
+  database_mongoDB:
+    image: mongo:8.0
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: imageDB      
+    healthcheck:
+      test: ["CMD","mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 30s
+      retries: 5
+    volumes:
+      - ./dbinit/mongoDB/:/home/
+      - ./dbinit/mongoDB/:/docker-entrypoint-initdb.d/
+    ports:
+      - "27019:27017"
+    
+volumes:
+  testvolume:
+    
+      
