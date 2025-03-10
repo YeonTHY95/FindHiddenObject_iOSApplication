@@ -63,9 +63,9 @@ Make sure you have the following installed on your machine:
 - Docker
 
 Cloning the Repository
- > git clone https://github.com/YeonTHY95/FindHiddenObject_iOSWithBackend.git
+ > git clone https://github.com/YeonTHY95/FindHiddenObject_iOSApplication.git
  > 
- > cd FindHiddenObject_iOSWithBackend
+ > cd FindHiddenObject_iOSApplication
 
 Start the Docker service for backend services
 
